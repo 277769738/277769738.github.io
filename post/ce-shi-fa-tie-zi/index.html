@@ -8,9 +8,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://yuzhiqn.cn/favicon.ico?v=1598669423047">
-<link rel="stylesheet" href="https://yuzhiqn.cn/styles/main.css">
+<link rel="shortcut icon" href="https://277769738.github.io/favicon.ico?v=1619061687425">
+<link rel="stylesheet" href="https://277769738.github.io/styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
 
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -31,8 +37,8 @@ Markdown是一种轻量级标记语言，创始人为约翰·格鲁伯（英语�
       <div class="sidebar" :class="{ 'full-height': menuVisible }">
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
-      <a class="site-title-container" href="https://yuzhiqn.cn">
-        <img src="https://yuzhiqn.cn/images/avatar.png?v=1598669423047" class="site-logo">
+      <a class="site-title-container" href="https://277769738.github.io">
+        <img src="https://277769738.github.io/images/avatar.png?v=1619061687425" class="site-logo">
         <h1 class="site-title">Gridea</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -85,7 +91,7 @@ Markdown是一种轻量级标记语言，创始人为约翰·格鲁伯（英语�
       与之青年
     </div>
     <div class="site-footer">
-      Powered by <a href="https://yuzhiqn.cn" target="_blank">Gridea</a> | <a class="rss" href="https://yuzhiqn.cn/atom.xml" target="_blank">RSS</a>
+      Powered by <a href="https://yuzhiqn.cn" target="_blank">Gridea</a> | <a class="rss" href="https://277769738.github.io/atom.xml" target="_blank">RSS</a>
     </div>
   </div>
 </div>
@@ -98,7 +104,7 @@ Markdown是一种轻量级标记语言，创始人为约翰·格鲁伯（英语�
             <div class="post-date">2020-08-29</div>
             
             <div class="post-content" v-pre>
-              <figure data-type="image" tabindex="1"><img src="https://yuzhiqn.cn/post-images/1598669355103.jpg" alt="" loading="lazy"></figure>
+              <figure data-type="image" tabindex="1"><img src="https://277769738.github.io/post-images/1598669355103.jpg" alt="" loading="lazy"></figure>
 <p>Markdown是一种轻量级标记语言，创始人为约翰·格鲁伯（英语：John Gruber）。它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML（或者HTML）文档”。</p>
 <p>此篇仅为测试渲染效果，非教程</p>
 <p>标题<br>
@@ -120,6 +126,12 @@ Markdown是一种轻量级标记语言，创始人为约翰·格鲁伯（英语�
             
             
 
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
             
 
           </div>
@@ -143,6 +155,29 @@ var app = new Vue({
 </script>
 
 
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '59640bce11d712d9c7cd',
+        clientSecret: '58bac23d24aa9d456c0c4ce464c03888d6807ba2',
+        repo: '277769738.github.io',
+        owner: '277769738',
+        admin: ['277769738'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 

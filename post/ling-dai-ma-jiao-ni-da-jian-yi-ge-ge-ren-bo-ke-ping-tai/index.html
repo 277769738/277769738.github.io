@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>零代码，教你搭建一个个人博客平台 | Gridea</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://277769738.github.io/favicon.ico?v=1619061687425">
+<link rel="stylesheet" href="https://277769738.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="HI，朋友们，我是希留。
+几乎每个程序猿都梦想有一个自己的博客平台，拥有自己的个人博客应该是一件令人向往的事情，可以记录和分享自己的观点，还可以增强自己的能力。但是对于一些技术能力稍弱的，想要从0开始搭建一套完整的博客平台还是有不小的难度的..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://277769738.github.io">
+        <img src="https://277769738.github.io/images/avatar.png?v=1619061687425" class="site-logo">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      与之青年
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://yuzhiqn.cn" target="_blank">Gridea</a> | <a class="rss" href="https://277769738.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">零代码，教你搭建一个个人博客平台</h2>
+            <div class="post-date">2021-04-22</div>
+            
+            <div class="post-content" v-pre>
+              <p>HI，朋友们，我是希留。<br>
+几乎每个程序猿都梦想有一个自己的博客平台，拥有自己的个人博客应该是一件令人向往的事情，可以记录和分享自己的观点，还可以增强自己的能力。但是对于一些技术能力稍弱的，想要从0开始搭建一套完整的博客平台还是有不小的难度的。所以，今天的文章，将和大家分享一篇使用Gridea+Github Pages，搭建一个个人博客系统，无需任何代码，几乎没有技术门槛。<br>
+Gridea（https://gridea.dev）是 一个基于Github Pages 和 Coding Page 静态博客管理工具，最重要的是不用自己购买域名！可以直接与GitHub或Coding配合展示页面。<br>
+<img src="https://277769738.github.io/post-images/1619061664815.jpg" alt="" loading="lazy"></p>
+<p>搭建步骤<br>
+一、下载安装Git<br>
+二、下载安装Gridea客户端<br>
+三、新建Github仓库，生成密钥<br>
+四、配置Gridea<br>
+五、添加评论功能<br>
+六、测试</p>
+<p>1、下载安装Git<br>
+因为需要把本地的数据上传至GitHub仓库，所以需要Git客户端，这里就不做安装介绍了，大家可以自行下载安装。</p>
+<p>2、下载安装Gridea客户端<br>
+前往Gridea官网，选择自己要下载的版本。我下的是Windows版的，安装完成，打开软件如下图所示</p>
+<p>3、新建Github仓库，生成密钥<br>
+要新建一个Github仓库，所以就需要申请一个Github账号，本文默认你已经有账号了（没有的同学自行申请一个即可）。登录Github,新建一个仓库，这里再次提醒要注意仓库的名称，比如我的帐号是277769738，那么仓库名称应该是：277769738.github.io<br>
+新建完仓库后，访问 https:// + 你仓库的名字, 如果访问404失败便是配置出现问题，请仔细查看自己的步骤。如果显示出来一个几乎空白的页面便是成功。<br>
+下面开始生成密钥。打开个人设置Settings，点击Developer settings，选择Personal access tokens，点击创建一个新Token<br>
+​创建完成后，会生成一串密钥，请把它们保存到一个文档里（因为之后可能就会找不到了），接下来就基本OK啦，开始最终配置。</p>
+<p>4、配置Gridea<br>
+​打开安装好的Gridea，选择远程栏目，开始基础配置，填写相关信息，令牌就是刚刚生成的一串Token密钥，填写好之后可以点击检测远程连接，看是否能够连接成功。如果连接不成功，请检查相关信息是否填写准确。</p>
+<p>5、添加评论功能<br>
+Gridea 目前支持 Gitalk 和 Disqus 两种评论系统，这里我使用 Gitalk 评论系统。<br>
+首先创建一个「GitHub OAuth Applicatio」，得到Client ID和Client Secret​。创建步骤如下所示<br>
+得到Client ID和Client Secret，在Gridea客户端进行评论配置，如下所示</p>
+<p>6、测试</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://277769738.github.io/post/ce-shi-fa-tie-zi/">
+                  <h3 class="post-title">
+                    测试发帖子
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '59640bce11d712d9c7cd',
+        clientSecret: '58bac23d24aa9d456c0c4ce464c03888d6807ba2',
+        repo: '277769738.github.io',
+        owner: '277769738',
+        admin: ['277769738'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
